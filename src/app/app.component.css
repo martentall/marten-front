@@ -1,0 +1,9 @@
+.content {
+  width: 50%;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 3vh;
+  background: #000;
+  color: white;
+  font-family: "Courier New";
+}

@@ -1,0 +1,5 @@
+<div class="intro-div" (click)="endIntro()">
+  <h1 class="intro-title" [ngClass]="{'intro-ending-title': introState === 'ending' }"><span class="fade-in-5">Marten</span><span class="fade-in-4-delay-1"> Software</span></h1>
+  <img [src]="downArrowImgPath" class="down-arrow-img" [ngClass]="{'intro-ending-arrow': introState === 'ending' }" alt="down arrow - continue" height="70">
+</div>
+
