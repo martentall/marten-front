@@ -1,6 +1,5 @@
 # marten-front
-
-http://www.marten.software
+[http://marten.software](http://marten.software)
 
 ## Development server
 
