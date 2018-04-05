@@ -1,10 +1,12 @@
-import {Component, ComponentFactoryResolver, OnInit, ViewChild, ComponentRef} from '@angular/core';
+import {Component, ComponentFactoryResolver, OnInit, ViewChild} from '@angular/core';
+import {ConsoleService} from './console.service';
 import {TypewriterHostDirective} from "../directives/typewriter-host.directive";
 import {TypewriterComponent} from "./typewriter/typewriter.component";
 import {TextRow} from "./models/text-row";
 
 @Component({
   selector: 'console',
+  providers: [ConsoleService],
   templateUrl: './console.component.html',
   styleUrls: ['./console.component.css']
 })
@@ -17,11 +19,14 @@ export class ConsoleComponent implements OnInit {
 
   @ViewChild(TypewriterHostDirective) typewriterHost: TypewriterHostDirective;
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver) { }
+  constructor(private componentFactoryResolver: ComponentFactoryResolver, private _consoleService: ConsoleService) { }
 
   ngOnInit() {
-    this.textRows = ["Welcome!", "My name is Marten", "What is your name?"];
-    this.addTypewriter()
+    this._consoleService.getWelcome().subscribe(
+      (data: Array<string>) => { this.textRows = data; },
+      (err) => console.error(err), //TODO error handling
+      () => { this.addTypewriter(); }
+      );
   }
 
   addTypewriter() {

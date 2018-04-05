@@ -1,6 +1,8 @@
 <div class="content">
 
   <intro *ngIf="appState === 'intro'" (appStateEvent)="receiveMessage($event)"></intro>
+
+  <contacts *ngIf="appState === 'contacts'"></contacts>
   <console *ngIf="appState === 'console'"></console>
 
 </div>

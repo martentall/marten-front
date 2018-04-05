@@ -20,7 +20,6 @@ export class TypewriterComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.textRow);
     this.typeRow(this.textRow);
   }
 

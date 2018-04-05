@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
 
   receiveMessage($event) {
     if ($event === 'intro-ended') {
-      this.appState = 'console'
+      this.appState = 'contacts';
     }
 
   }

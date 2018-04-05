@@ -1,0 +1,19 @@
+.contacts-container {
+  height: 100%;
+  width: 100%;
+  margin-top: 20%;
+}
+
+.contacts {
+  width: 35%;
+  margin: 0 auto;
+
+  text-align: left;
+  font-size: 1em;
+}
+
+.contact {
+  margin-right: 0.5em;
+  opacity: 0.8;
+}
+
